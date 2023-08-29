@@ -1,7 +1,11 @@
 const router = require('express').Router();
 
-const { getAllUsers } = require('../../controllers/userController');
+const { getAllUsers, createUser, getUserById, updateUser, deleteUser } = require('../../controllers/userController');
 
-router.route('/').get(getAllUsers);
+// Set up GET all and POST at /api/users
+router.route('/').get(getAllUsers).post(createUser);
+
+// Set up GET one, PUT, and DELETE at /api/users/:id
+router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
 module.exports = router;

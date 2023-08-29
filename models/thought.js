@@ -16,12 +16,11 @@ const thoughtSchema = new Schema(
             default: Date.now,
             //use a getter method here?
         },
-        username: [
+        username: 
             {
                 type: String,
                 required: true,
             },
-        ],
         reactions: [reactionSchema],
     },
     {
